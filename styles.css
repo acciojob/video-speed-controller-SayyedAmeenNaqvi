@@ -1,62 +1,66 @@
 
 /* Your CSS Code here. */
+ /* Minimal CSS for functionality and visual cues */
 body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #111;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #4A4A4A;
 }
 
 .player {
-  max-width: 750px;
-  border: 5px solid #333;
-  background: black;
-  color: white;
+    max-width: 800px;
+    position: relative;
+    font-size: 0; /* To prevent gap under video */
 }
 
-.viewer {
-  width: 100%;
-  max-height: 420px;
-  display: block;
+.player__video {
+    width: 100%;
 }
 
 .player__controls {
-  display: flex;
-  flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  align-items: center;
-}
-
-.player__button {
-  background: none;
-  border: 0;
-  color: white;
-  font-size: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.player__slider {
-  margin: 0 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    align-items: center;
 }
 
 .progress {
-  flex: 1;
-  height: 10px;
-  background: #444;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 5px;
-  overflow: hidden;
+    height: 10px;
+    background: #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .progress__filled {
-  width: 0%;
-  height: 100%;
-  background: #f00;
-  flex-basis: 0;
+    width: 0%;
+    height: 100%;
+    background: #ffc600; /* Yellow accent */
+}
+
+.player__button {
+    background: none;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    min-width: 50px;
+    font-size: 1.5rem;
+}
+
+.player__slider {
+    width: 15%;
+    margin: 0 10px;
+    cursor: grab;
+    /* Hide default thumb for a cleaner look if desired, not strictly required */
 }
