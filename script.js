@@ -1,4 +1,4 @@
-const video = document.querySelector('.player__video');
+const video = document.querySelector('.viewer');
 const toggle = document.querySelector('.toggle');
 const volume = document.querySelector('input[name="volume"]');
 const playbackRate = document.querySelector('input[name="playbackRate"]');
@@ -24,7 +24,7 @@ function handleRangeUpdate() {
 
 function handleProgress() {
   const percent = (video.currentTime / video.duration) * 100;
-  progressBar.style.flexBasis = ${percent}%;
+  progressBar.style.flexBasis = `${percent}%`;
 }
 
 function scrub(e) {
@@ -38,6 +38,7 @@ video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
+
 volume.addEventListener('change', handleRangeUpdate);
 volume.addEventListener('mousemove', handleRangeUpdate);
 playbackRate.addEventListener('change', handleRangeUpdate);
